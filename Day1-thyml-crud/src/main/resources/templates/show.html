@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> show</title>
+</head>
+<body>
+Show
+<table>
+<thead>
+<tr>
+<th> Name </th>
+<th> Address </th>
+<th> Edit </th>
+<th>Delete </th>
+</tr>
+</thead>
+<tbody>
+
+<tr th:each="emp:${employees}"> 
+<td th:text="${emp.name}"></td>
+<td th:text="${emp.address}"></td>
+<td><a th:href="@{/edit/{id}(id=${emp.id})}">Edit</a></td>
+<td><a th:href="@{/delete/{id}(id=${emp.id})}">Delete</a></td>
+</tr>
+</tbody>
+</table>
+<a th:href="@{/}">new user </a>
+</body>
+</html>
